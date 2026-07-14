@@ -12,8 +12,6 @@ import { Testimonials } from '@/components/Testimonials'
 import { Contact } from '@/components/Contact'
 import { Footer } from '@/components/Footer'
 import { Navbar } from '@/components/Navbar'
-import { CommandPalette } from '@/components/CommandPalette'
-import { ThemeToggle } from '@/components/ThemeToggle'
 import Lenis from '@studio-freight/lenis'
 
 export default function Home() {
@@ -53,8 +51,6 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <Navbar />
-      <CommandPalette />
-      <ThemeToggle />
       <Hero />
       <About />
       <Skills />

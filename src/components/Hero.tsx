@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowDown, Github, Linkedin, Twitter, Mail } from 'lucide-react'
+import { ArrowDown, Github, Linkedin, Mail, Download } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 export function Hero() {
@@ -143,7 +143,7 @@ export function Hero() {
           </motion.p>
 
           <motion.div
-            className="flex gap-4 justify-center mb-12"
+            className="flex gap-4 justify-center mb-12 flex-wrap"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.4 }}
@@ -163,6 +163,16 @@ export function Hero() {
               whileTap={{ scale: 0.95 }}
             >
               Get in Touch
+            </motion.a>
+            <motion.a
+              href="/Sajid-CV.pdf"
+              download
+              className="magnetic px-8 py-4 glass rounded-full font-semibold text-white hover:bg-white/10 transition-colors flex items-center gap-2"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Download className="w-5 h-5" />
+              Download CV
             </motion.a>
           </motion.div>
 
