@@ -34,7 +34,7 @@ export function Hero() {
 
       {/* Floating Blobs */}
       <motion.div
-        className="absolute top-10 left-10 w-40 h-40 md:w-72 md:h-72 bg-purple-500/20 rounded-full blur-3xl"
+        className="absolute top-10 left-10 w-40 h-40 md:w-72 md:h-72 bg-purple-500/20 rounded-full blur-3xl hidden md:block"
         animate={{
           x: [0, 50, 0],
           y: [0, -50, 0],
@@ -46,24 +46,13 @@ export function Hero() {
         }}
       />
       <motion.div
-        className="absolute bottom-10 right-10 w-48 h-48 md:w-96 md:h-96 bg-cyan-500/20 rounded-full blur-3xl"
+        className="absolute bottom-10 right-10 w-48 h-48 md:w-96 md:h-96 bg-cyan-500/20 rounded-full blur-3xl hidden md:block"
         animate={{
           x: [0, -50, 0],
           y: [0, 50, 0],
         }}
         transition={{
           duration: 12,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
-      />
-      <motion.div
-        className="absolute top-1/2 left-1/2 w-32 h-32 md:w-64 md:h-64 bg-pink-500/10 rounded-full blur-3xl"
-        animate={{
-          scale: [1, 1.2, 1],
-        }}
-        transition={{
-          duration: 8,
           repeat: Infinity,
           ease: 'easeInOut',
         }}

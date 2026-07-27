@@ -45,8 +45,8 @@ export function Skills() {
           </p>
         </motion.div>
 
-        {/* 3D Skill Galaxy */}
-        <div className="relative h-[400px] md:h-[600px] flex items-center justify-center px-4">
+        {/* 3D Skill Galaxy - Hidden on mobile for performance */}
+        <div className="relative h-[400px] md:h-[600px] flex items-center justify-center px-4 hidden md:block">
           {/* Central Hub */}
           <motion.div
             className="absolute w-24 h-24 md:w-32 md:h-32 rounded-full glass flex items-center justify-center neon-glow"
