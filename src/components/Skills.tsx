@@ -24,7 +24,7 @@ export function Skills() {
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null)
 
   return (
-    <section id="skills" className="relative py-32 overflow-hidden">
+    <section id="skills" className="relative py-16 md:py-32 overflow-hidden">
       <div className="absolute inset-0 animated-bg">
         <div className="aurora" />
       </div>
@@ -37,19 +37,19 @@ export function Skills() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-display font-bold gradient-text mb-4">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold gradient-text mb-4">
             Skills & Expertise
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto px-4">
             Technologies and tools I use to bring ideas to life
           </p>
         </motion.div>
 
         {/* 3D Skill Galaxy */}
-        <div className="relative h-[600px] flex items-center justify-center">
+        <div className="relative h-[400px] md:h-[600px] flex items-center justify-center px-4">
           {/* Central Hub */}
           <motion.div
-            className="absolute w-32 h-32 rounded-full glass flex items-center justify-center neon-glow"
+            className="absolute w-24 h-24 md:w-32 md:h-32 rounded-full glass flex items-center justify-center neon-glow"
             animate={{
               scale: [1, 1.1, 1],
               rotate: [0, 360],
@@ -60,13 +60,13 @@ export function Skills() {
               ease: 'easeInOut',
             }}
           >
-            <span className="text-2xl font-bold gradient-text">Tech</span>
+            <span className="text-xl md:text-2xl font-bold gradient-text">Tech</span>
           </motion.div>
 
           {/* Skill Orbits */}
           {skills.map((skill, index) => {
             const angle = (index / skills.length) * 2 * Math.PI
-            const radius = 200 + (index % 3) * 50
+            const radius = 120 + (index % 3) * 30
             const x = Math.cos(angle) * radius
             const y = Math.sin(angle) * radius
 
@@ -93,7 +93,7 @@ export function Skills() {
                 onMouseLeave={() => setHoveredSkill(null)}
               >
                 <motion.div
-                  className="glass rounded-full p-4 cursor-pointer card-3d"
+                  className="glass rounded-full p-2 md:p-4 cursor-pointer card-3d"
                   whileHover={{ scale: 1.1 }}
                   style={{
                     borderColor: skill.color,
@@ -103,7 +103,7 @@ export function Skills() {
                   }}
                 >
                   <div className="text-center">
-                    <div className="text-2xl font-bold mb-1" style={{ color: skill.color }}>
+                    <div className="text-sm md:text-2xl font-bold mb-0.5 md:mb-1" style={{ color: skill.color }}>
                       {skill.name}
                     </div>
                     <div className="text-xs text-gray-400">{skill.level}%</div>
@@ -117,10 +117,10 @@ export function Skills() {
           {[...Array(3)].map((_, index) => (
             <motion.div
               key={index}
-              className="absolute border border-purple-500/20 rounded-full"
+              className="absolute border border-purple-500/20 rounded-full hidden md:block"
               style={{
-                width: `${300 + index * 100}px`,
-                height: `${300 + index * 100}px`,
+                width: `${200 + index * 80}px`,
+                height: `${200 + index * 80}px`,
               }}
               animate={{
                 rotate: [0, 360],
@@ -137,7 +137,7 @@ export function Skills() {
 
         {/* Skill Categories */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20"
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mt-12 md:mt-20 px-4"
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.5 }}
@@ -145,35 +145,35 @@ export function Skills() {
           {[
             {
               title: 'Frontend',
-              skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Three.js'],
+              skills: ['HTML/CSS', 'JavaScript', 'React', 'Tailwind CSS'],
               icon: '🎨',
             },
             {
               title: 'Backend',
-              skills: ['Node.js', 'Python', 'GraphQL', 'PostgreSQL', 'AWS'],
+              skills: ['Node.js', 'Python', 'SQL', 'REST APIs'],
               icon: '⚙️',
             },
             {
-              title: 'Design',
-              skills: ['Figma', 'UI/UX', 'Motion Design', '3D Modeling', 'Branding'],
+              title: 'Tools',
+              skills: ['Git', 'VS Code', 'Postman'],
               icon: '✨',
             },
           ].map((category, index) => (
             <motion.div
               key={index}
-              className="glass rounded-2xl p-6 card-3d"
+              className="glass rounded-2xl p-4 md:p-6 card-3d"
               whileHover={{ scale: 1.02 }}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.6 + index * 0.1 }}
             >
-              <div className="text-4xl mb-4">{category.icon}</div>
-              <h3 className="text-2xl font-bold text-white mb-4">{category.title}</h3>
-              <div className="flex flex-wrap gap-2">
+              <div className="text-3xl md:text-4xl mb-3 md:mb-4">{category.icon}</div>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">{category.title}</h3>
+              <div className="flex flex-wrap gap-1.5 md:gap-2">
                 {category.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1 bg-purple-500/20 rounded-full text-sm text-purple-300"
+                    className="px-2 md:px-3 py-1 bg-purple-500/20 rounded-full text-xs md:text-sm text-purple-300"
                   >
                     {skill}
                   </span>

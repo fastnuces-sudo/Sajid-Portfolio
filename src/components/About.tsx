@@ -39,7 +39,7 @@ export function About() {
   ]
 
   return (
-    <section id="about" className="relative py-32 overflow-hidden">
+    <section id="about" className="relative py-16 md:py-32 overflow-hidden">
       <div className="absolute inset-0 animated-bg">
         <div className="aurora" />
       </div>
@@ -52,17 +52,17 @@ export function About() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-display font-bold gradient-text mb-4">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold gradient-text mb-4">
             About Me
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto px-4">
             Computer Science student at FAST NUCES with a passion for creative web development
           </p>
         </motion.div>
 
         {/* Stats */}
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20"
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-12 md:mb-20"
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -70,32 +70,32 @@ export function About() {
           {stats.map((stat, index) => (
             <motion.div
               key={index}
-              className="glass rounded-2xl p-6 text-center card-3d"
+              className="glass rounded-2xl p-4 md:p-6 text-center card-3d"
               whileHover={{ scale: 1.05 }}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.3 + index * 0.1 }}
             >
-              <stat.icon className="w-12 h-12 mx-auto mb-4 text-cyan-400" />
-              <div className="text-4xl font-bold gradient-text mb-2">{stat.value}</div>
-              <div className="text-gray-400">{stat.label}</div>
+              <stat.icon className="w-8 h-8 md:w-12 md:h-12 mx-auto mb-2 md:mb-4 text-cyan-400" />
+              <div className="text-2xl md:text-4xl font-bold gradient-text mb-1 md:mb-2">{stat.value}</div>
+              <div className="text-xs md:text-base text-gray-400">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>
 
         {/* Timeline */}
-        <div className="max-w-4xl mx-auto">
-          <h3 className="text-3xl font-display font-bold text-center mb-12 text-white">
+        <div className="max-w-4xl mx-auto px-4">
+          <h3 className="text-2xl md:text-3xl font-display font-bold text-center mb-8 md:mb-12 text-white">
             My Journey
           </h3>
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-purple-500 to-cyan-500" />
+            <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-purple-500 to-cyan-500" />
 
             {timeline.map((item, index) => (
               <motion.div
                 key={index}
-                className={`relative flex items-center mb-12 ${
+                className={`relative flex items-center mb-8 md:mb-12 ${
                   index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
                 }`}
                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
@@ -103,23 +103,23 @@ export function About() {
                 transition={{ delay: 0.4 + index * 0.2 }}
               >
                 {/* Timeline Dot */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-purple-500 rounded-full neon-glow z-10" />
+                <div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-3 h-3 md:w-4 md:h-4 bg-purple-500 rounded-full neon-glow z-10" />
 
                 {/* Content */}
-                <div className={`w-1/2 ${index % 2 === 0 ? 'pr-12 text-right' : 'pl-12'}`}>
+                <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'pl-12 md:pr-12 md:text-right' : 'pl-12 md:pl-12'}`}>
                   <motion.div
-                    className="glass rounded-2xl p-6 card-3d"
+                    className="glass rounded-2xl p-4 md:p-6 card-3d"
                     whileHover={{ scale: 1.02 }}
                   >
-                    <div className="text-cyan-400 font-bold mb-2">{item.year}</div>
-                    <h4 className="text-xl font-bold text-white mb-1">{item.title}</h4>
-                    <div className="text-purple-400 mb-3">{item.company}</div>
-                    <p className="text-gray-300">{item.description}</p>
+                    <div className="text-cyan-400 font-bold mb-1 md:mb-2 text-sm md:text-base">{item.year}</div>
+                    <h4 className="text-lg md:text-xl font-bold text-white mb-1">{item.title}</h4>
+                    <div className="text-purple-400 mb-2 md:mb-3 text-sm md:text-base">{item.company}</div>
+                    <p className="text-gray-300 text-sm md:text-base">{item.description}</p>
                   </motion.div>
                 </div>
 
                 {/* Empty Space */}
-                <div className="w-1/2" />
+                <div className="hidden md:block w-1/2" />
               </motion.div>
             ))}
           </div>

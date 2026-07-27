@@ -47,14 +47,14 @@ export function Navbar() {
             {/* Logo */}
             <motion.a
               href="#"
-              className="text-2xl font-display font-bold gradient-text"
+              className="text-xl md:text-2xl font-display font-bold gradient-text"
               whileHover={{ scale: 1.05 }}
             >
               Portfolio
             </motion.a>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden md:flex items-center gap-4 md:gap-8">
               {navItems.map((item, index) => (
                 <motion.a
                   key={item.name}
@@ -63,7 +63,7 @@ export function Navbar() {
                     e.preventDefault()
                     scrollToSection(item.href)
                   }}
-                  className="text-gray-300 hover:text-white transition-colors relative group"
+                  className="text-gray-300 hover:text-white transition-colors relative group text-sm md:text-base"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
@@ -85,11 +85,12 @@ export function Navbar() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
+              aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
-                <X className="w-6 h-6 text-white" />
+                <X className="w-5 h-5 md:w-6 md:h-6 text-white" />
               ) : (
-                <Menu className="w-6 h-6 text-white" />
+                <Menu className="w-5 h-5 md:w-6 md:h-6 text-white" />
               )}
             </motion.button>
           </div>
@@ -105,7 +106,7 @@ export function Navbar() {
             exit={{ opacity: 0, x: '100%' }}
             className="fixed inset-0 z-40 md:hidden glass"
           >
-            <div className="flex flex-col items-center justify-center h-full gap-8">
+            <div className="flex flex-col items-center justify-center h-full gap-6 md:gap-8">
               {navItems.map((item, index) => (
                 <motion.a
                   key={item.name}
@@ -114,7 +115,7 @@ export function Navbar() {
                     e.preventDefault()
                     scrollToSection(item.href)
                   }}
-                  className="text-2xl text-white font-medium"
+                  className="text-xl md:text-2xl text-white font-medium"
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}

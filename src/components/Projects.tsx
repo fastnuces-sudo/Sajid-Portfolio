@@ -41,7 +41,7 @@ export function Projects() {
     : projects.filter(p => p.category === selectedCategory)
 
   return (
-    <section id="projects" className="relative py-32 overflow-hidden">
+    <section id="projects" className="relative py-16 md:py-32 overflow-hidden">
       <div className="absolute inset-0 animated-bg">
         <div className="aurora" />
       </div>
@@ -54,17 +54,17 @@ export function Projects() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-display font-bold gradient-text mb-4">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold gradient-text mb-4">
             Featured Projects
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto px-4">
             A showcase of my best work and creative solutions
           </p>
         </motion.div>
 
         {/* Category Filter */}
         <motion.div
-          className="flex flex-wrap justify-center gap-3 mb-12"
+          className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:mb-12 px-4"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -73,7 +73,7 @@ export function Projects() {
             <motion.button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-2 rounded-full font-semibold transition-all ${
+              className={`px-4 py-2 md:px-6 md:py-2 rounded-full font-semibold transition-all text-sm md:text-base ${
                 selectedCategory === category
                   ? 'bg-gradient-to-r from-purple-500 to-cyan-500 text-white neon-glow'
                   : 'glass text-gray-300 hover:bg-white/10'
@@ -87,7 +87,7 @@ export function Projects() {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 px-4">
           {filteredProjects.map((project, index) => (
             <motion.div
               key={index}
@@ -103,7 +103,7 @@ export function Projects() {
                 whileHover={{ scale: 1.02 }}
               >
                 {/* Image */}
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-48 md:h-64 overflow-hidden">
                   <motion.img
                     src={project.image}
                     alt={project.title}
@@ -123,7 +123,7 @@ export function Projects() {
                     <div className="absolute bottom-4 left-4 right-4 flex gap-2">
                       <motion.a
                         href={project.live}
-                        className="flex-1 flex items-center justify-center gap-2 py-2 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-lg text-white font-semibold"
+                        className="flex-1 flex items-center justify-center gap-2 py-2 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-lg text-white font-semibold text-sm"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
@@ -143,17 +143,17 @@ export function Projects() {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
-                  <div className="text-cyan-400 text-sm mb-2">{project.category}</div>
-                  <h3 className="text-2xl font-bold text-white mb-3">{project.title}</h3>
-                  <p className="text-gray-300 mb-4">{project.description}</p>
+                <div className="p-4 md:p-6">
+                  <div className="text-cyan-400 text-xs md:text-sm mb-2">{project.category}</div>
+                  <h3 className="text-lg md:text-2xl font-bold text-white mb-2 md:mb-3">{project.title}</h3>
+                  <p className="text-gray-300 text-sm md:text-base mb-3 md:mb-4 line-clamp-2">{project.description}</p>
                   
                   {/* Tech Stack */}
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5 md:gap-2">
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 bg-purple-500/20 rounded-full text-xs text-purple-300"
+                        className="px-2 md:px-3 py-1 bg-purple-500/20 rounded-full text-xs md:text-sm text-purple-300"
                       >
                         {tech}
                       </span>

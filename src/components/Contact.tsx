@@ -41,7 +41,7 @@ export function Contact() {
   ]
 
   return (
-    <section id="contact" className="relative py-32 overflow-hidden">
+    <section id="contact" className="relative py-16 md:py-32 overflow-hidden">
       <div className="absolute inset-0 animated-bg">
         <div className="aurora" />
       </div>
@@ -54,43 +54,43 @@ export function Contact() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-display font-bold gradient-text mb-4">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold gradient-text mb-4">
             Get in Touch
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto px-4">
             Let's create something amazing together
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 max-w-6xl mx-auto px-4">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.2 }}
           >
-            <div className="glass rounded-2xl p-8 mb-8">
-              <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
+            <div className="glass rounded-2xl p-4 md:p-8 mb-6 md:mb-8">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6">Contact Information</h3>
               
-              <div className="space-y-6">
+              <div className="space-y-4 md:space-y-6">
                 {contactInfo.map((info, index) => (
                   <motion.div
                     key={index}
-                    className="flex items-center gap-4"
+                    className="flex items-center gap-3 md:gap-4"
                     initial={{ opacity: 0, x: -20 }}
                     animate={inView ? { opacity: 1, x: 0 } : {}}
                     transition={{ delay: 0.3 + index * 0.1 }}
                   >
                     <motion.div
-                      className="w-12 h-12 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-xl flex items-center justify-center neon-glow"
+                      className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-xl flex items-center justify-center neon-glow"
                       whileHover={{ rotate: 360 }}
                       transition={{ duration: 0.6 }}
                     >
-                      <info.icon className="w-6 h-6 text-white" />
+                      <info.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
                     </motion.div>
                     <div>
-                      <div className="text-gray-400 text-sm">{info.label}</div>
-                      <div className="text-white font-semibold">{info.value}</div>
+                      <div className="text-gray-400 text-xs md:text-sm">{info.label}</div>
+                      <div className="text-white font-semibold text-sm md:text-base">{info.value}</div>
                     </div>
                   </motion.div>
                 ))}
@@ -98,20 +98,20 @@ export function Contact() {
             </div>
 
             {/* Social Links */}
-            <div className="glass rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-white mb-6">Connect With Me</h3>
+            <div className="glass rounded-2xl p-4 md:p-8">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6">Connect With Me</h3>
               
-              <div className="flex gap-4">
+              <div className="flex gap-3 md:gap-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={index}
                     href={social.href}
-                    className="w-12 h-12 glass rounded-xl flex items-center justify-center hover:bg-white/10 transition-colors"
+                    className="w-10 h-10 md:w-12 md:h-12 glass rounded-xl flex items-center justify-center hover:bg-white/10 transition-colors"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     whileTap={{ scale: 0.9 }}
                     aria-label={social.label}
                   >
-                    <social.icon className="w-6 h-6 text-white" />
+                    <social.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
                   </motion.a>
                 ))}
               </div>
@@ -124,23 +124,23 @@ export function Contact() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.4 }}
           >
-            <form onSubmit={handleSubmit} className="glass rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
+            <form onSubmit={handleSubmit} className="glass rounded-2xl p-4 md:p-8">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6">Send a Message</h3>
               
-              <div className="space-y-6">
+              <div className="space-y-4 md:space-y-6">
                 <div className="relative">
                   <input
                     type="text"
                     id="name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-purple-500 transition-colors peer"
+                    className="w-full px-3 md:px-4 py-2 md:py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-purple-500 transition-colors peer text-sm md:text-base"
                     placeholder=" "
                     required
                   />
                   <label
                     htmlFor="name"
-                    className="absolute left-4 top-3 text-gray-400 transition-all peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-xs peer-focus:text-purple-400 peer-not-placeholder-shown:-top-2.5 peer-not-placeholder-shown:left-2 peer-not-placeholder-shown:text-xs"
+                    className="absolute left-3 md:left-4 top-2 md:top-3 text-gray-400 transition-all peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-xs peer-focus:text-purple-400 peer-not-placeholder-shown:-top-2.5 peer-not-placeholder-shown:left-2 peer-not-placeholder-shown:text-xs text-xs md:text-sm"
                   >
                     Your Name
                   </label>
@@ -152,13 +152,13 @@ export function Contact() {
                     id="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-purple-500 transition-colors peer"
+                    className="w-full px-3 md:px-4 py-2 md:py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-purple-500 transition-colors peer text-sm md:text-base"
                     placeholder=" "
                     required
                   />
                   <label
                     htmlFor="email"
-                    className="absolute left-4 top-3 text-gray-400 transition-all peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-xs peer-focus:text-purple-400 peer-not-placeholder-shown:-top-2.5 peer-not-placeholder-shown:left-2 peer-not-placeholder-shown:text-xs"
+                    className="absolute left-3 md:left-4 top-2 md:top-3 text-gray-400 transition-all peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-xs peer-focus:text-purple-400 peer-not-placeholder-shown:-top-2.5 peer-not-placeholder-shown:left-2 peer-not-placeholder-shown:text-xs text-xs md:text-sm"
                   >
                     Your Email
                   </label>
@@ -170,13 +170,13 @@ export function Contact() {
                     id="subject"
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-purple-500 transition-colors peer"
+                    className="w-full px-3 md:px-4 py-2 md:py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-purple-500 transition-colors peer text-sm md:text-base"
                     placeholder=" "
                     required
                   />
                   <label
                     htmlFor="subject"
-                    className="absolute left-4 top-3 text-gray-400 transition-all peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-xs peer-focus:text-purple-400 peer-not-placeholder-shown:-top-2.5 peer-not-placeholder-shown:left-2 peer-not-placeholder-shown:text-xs"
+                    className="absolute left-3 md:left-4 top-2 md:top-3 text-gray-400 transition-all peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-xs peer-focus:text-purple-400 peer-not-placeholder-shown:-top-2.5 peer-not-placeholder-shown:left-2 peer-not-placeholder-shown:text-xs text-xs md:text-sm"
                   >
                     Subject
                   </label>
@@ -187,14 +187,14 @@ export function Contact() {
                     id="message"
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    rows={5}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-purple-500 transition-colors peer resize-none"
+                    rows={4}
+                    className="w-full px-3 md:px-4 py-2 md:py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-purple-500 transition-colors peer resize-none text-sm md:text-base"
                     placeholder=" "
                     required
                   />
                   <label
                     htmlFor="message"
-                    className="absolute left-4 top-3 text-gray-400 transition-all peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-xs peer-focus:text-purple-400 peer-not-placeholder-shown:-top-2.5 peer-not-placeholder-shown:left-2 peer-not-placeholder-shown:text-xs"
+                    className="absolute left-3 md:left-4 top-2 md:top-3 text-gray-400 transition-all peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-xs peer-focus:text-purple-400 peer-not-placeholder-shown:-top-2.5 peer-not-placeholder-shown:left-2 peer-not-placeholder-shown:text-xs text-xs md:text-sm"
                   >
                     Your Message
                   </label>
@@ -203,7 +203,7 @@ export function Contact() {
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-4 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-xl font-semibold text-white neon-glow flex items-center justify-center gap-2 disabled:opacity-50"
+                  className="w-full py-3 md:py-4 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-xl font-semibold text-white neon-glow flex items-center justify-center gap-2 disabled:opacity-50 text-sm md:text-base"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >

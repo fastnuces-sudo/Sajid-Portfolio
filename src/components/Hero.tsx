@@ -34,10 +34,10 @@ export function Hero() {
 
       {/* Floating Blobs */}
       <motion.div
-        className="absolute top-20 left-20 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl"
+        className="absolute top-10 left-10 w-40 h-40 md:w-72 md:h-72 bg-purple-500/20 rounded-full blur-3xl"
         animate={{
-          x: [0, 100, 0],
-          y: [0, -100, 0],
+          x: [0, 50, 0],
+          y: [0, -50, 0],
         }}
         transition={{
           duration: 10,
@@ -46,10 +46,10 @@ export function Hero() {
         }}
       />
       <motion.div
-        className="absolute bottom-20 right-20 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"
+        className="absolute bottom-10 right-10 w-48 h-48 md:w-96 md:h-96 bg-cyan-500/20 rounded-full blur-3xl"
         animate={{
-          x: [0, -100, 0],
-          y: [0, 100, 0],
+          x: [0, -50, 0],
+          y: [0, 50, 0],
         }}
         transition={{
           duration: 12,
@@ -58,7 +58,7 @@ export function Hero() {
         }}
       />
       <motion.div
-        className="absolute top-1/2 left-1/2 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl"
+        className="absolute top-1/2 left-1/2 w-32 h-32 md:w-64 md:h-64 bg-pink-500/10 rounded-full blur-3xl"
         animate={{
           scale: [1, 1.2, 1],
         }}
@@ -71,7 +71,7 @@ export function Hero() {
 
       {/* Particles */}
       {isMounted && (
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 hidden md:block">
           {[...Array(50)].map((_, i) => (
             <motion.div
               key={i}
@@ -103,7 +103,7 @@ export function Hero() {
           transition={{ type: 'spring', stiffness: 100, damping: 20 }}
         >
           <motion.p
-            className="text-cyan-400 text-lg mb-4 tracking-widest uppercase"
+            className="text-cyan-400 text-sm md:text-lg mb-4 tracking-widest uppercase"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -112,7 +112,7 @@ export function Hero() {
           </motion.p>
 
           <motion.h1
-            className="text-6xl md:text-8xl lg:text-9xl font-display font-bold mb-6"
+            className="text-4xl md:text-6xl lg:text-8xl font-display font-bold mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
@@ -133,7 +133,7 @@ export function Hero() {
           </motion.h1>
 
           <motion.p
-            className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto mb-8"
+            className="text-base md:text-xl lg:text-2xl text-gray-300 max-w-2xl mx-auto mb-8 px-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2 }}
@@ -143,14 +143,14 @@ export function Hero() {
           </motion.p>
 
           <motion.div
-            className="flex gap-4 justify-center mb-12 flex-wrap"
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-12 flex-wrap px-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.4 }}
           >
             <motion.a
               href="#projects"
-              className="magnetic px-8 py-4 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full font-semibold text-white neon-glow hover:scale-105 transition-transform"
+              className="magnetic px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full font-semibold text-white neon-glow hover:scale-105 transition-transform text-sm md:text-base"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -158,7 +158,7 @@ export function Hero() {
             </motion.a>
             <motion.a
               href="#contact"
-              className="magnetic px-8 py-4 glass rounded-full font-semibold text-white hover:bg-white/10 transition-colors"
+              className="magnetic px-6 py-3 md:px-8 md:py-4 glass rounded-full font-semibold text-white hover:bg-white/10 transition-colors text-sm md:text-base"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -167,17 +167,17 @@ export function Hero() {
             <motion.a
               href="/Sajid-CV.pdf"
               download
-              className="magnetic px-8 py-4 glass rounded-full font-semibold text-white hover:bg-white/10 transition-colors flex items-center gap-2"
+              className="magnetic px-6 py-3 md:px-8 md:py-4 glass rounded-full font-semibold text-white hover:bg-white/10 transition-colors flex items-center gap-2 text-sm md:text-base"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Download className="w-5 h-5" />
+              <Download className="w-4 h-4 md:w-5 md:h-5" />
               Download CV
             </motion.a>
           </motion.div>
 
           <motion.div
-            className="flex gap-6 justify-center"
+            className="flex gap-4 sm:gap-6 justify-center px-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.6 }}
@@ -190,12 +190,12 @@ export function Hero() {
               <motion.a
                 key={index}
                 href={social.href}
-                className="p-3 glass rounded-full hover:bg-white/10 transition-colors"
+                className="p-2.5 md:p-3 glass rounded-full hover:bg-white/10 transition-colors"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
                 aria-label={social.label}
               >
-                <social.icon className="w-6 h-6" />
+                <social.icon className="w-5 h-5 md:w-6 md:h-6" />
               </motion.a>
             ))}
           </motion.div>
@@ -210,12 +210,12 @@ export function Hero() {
         transition={{ delay: 2 }}
       >
         <motion.div
-          className="flex flex-col items-center gap-2 text-gray-400"
+          className="flex flex-col items-center gap-2 text-gray-400 px-4"
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <span className="text-sm">Scroll to explore</span>
-          <ArrowDown className="w-6 h-6" />
+          <span className="text-xs md:text-sm">Scroll to explore</span>
+          <ArrowDown className="w-5 h-5 md:w-6 md:h-6" />
         </motion.div>
       </motion.div>
 
