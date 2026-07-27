@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react'
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
 
 export function Contact() {
   const [ref, inView] = useInView({
@@ -18,15 +19,36 @@ export function Contact() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    // Simulate form submission
-    setTimeout(() => {
+    
+    try {
+      const result = await emailjs.send(
+        'service_1ucdbfq',
+        'template_92y9lax',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: 'fastnuces4540@gmail.com',
+        },
+        '7lpSOkFaK1unhOb0o'
+      )
+      
+      if (result.status === 200) {
+        setFormData({ name: '', email: '', subject: '', message: '' })
+        alert('Message sent successfully!')
+      } else {
+        alert('Failed to send message. Please try again.')
+      }
+    } catch (error) {
+      console.error('Error sending email:', error)
+      alert('Failed to send message. Please try again.')
+    } finally {
       setIsSubmitting(false)
-      setFormData({ name: '', email: '', subject: '', message: '' })
-      alert('Message sent successfully!')
-    }, 2000)
+    }
   }
 
   const contactInfo = [
