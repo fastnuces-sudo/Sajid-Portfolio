@@ -15,25 +15,25 @@ export function About() {
       year: '2025 - Present',
       title: 'BS Computer Science',
       company: 'FAST NUCES',
-      description: 'Currently pursuing Bachelor\'s in Computer Science at one of Pakistan\'s top universities. Focusing on web development and problem-solving.',
+      description: 'Currently pursuing Bachelor\'s in Computer Science at one of Pakistan\'s top universities. Focusing on software development, app development and problem-solving.',
     },
     {
-      year: '2022 - Present',
-      title: 'Web Developer',
+      year: '2024 - Present',
+      title: 'Software Developer',
       company: 'Freelance',
-      description: 'Building web applications and solving creative problems for clients. Specializing in modern web technologies.',
+      description: 'Building web apps, mobile apps and automation solutions for clients — from chatbots and workflows to full-stack products. Specializing in modern software technologies.',
     },
     {
-      year: '2021',
-      title: 'Started Web Development Journey',
+      year: '2024',
+      title: 'Started Development Journey',
       company: 'Self Learning',
-      description: 'Began learning web development with a passion for creating innovative digital solutions.',
+      description: 'Began learning software development with a passion for creating innovative digital solutions across web, mobile, automation and games.',
     },
   ]
 
   const stats = [
     { icon: Calendar, value: '2+', label: 'Years Experience' },
-    { icon: Award, value: '2+', label: 'Projects Completed' },
+    { icon: Award, value: '6+', label: 'Projects Completed' },
     { icon: Target, value: 'BS CS', label: 'Currently Studying' },
     { icon: Zap, value: '2026', label: 'Graduation Year' },
   ]
@@ -56,7 +56,7 @@ export function About() {
             About Me
           </h2>
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto px-4">
-            Computer Science student at FAST NUCES with a passion for creative web development
+            Computer Science student at FAST NUCES with a passion for creative software development — web, mobile apps, automation &amp; games
           </p>
         </motion.div>
 

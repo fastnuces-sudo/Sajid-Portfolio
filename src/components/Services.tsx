@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Code, Smartphone, Palette, Server, Zap, Globe } from 'lucide-react'
+import { Code, Smartphone, Palette, Server, Zap, Globe, Bot, Gamepad2 } from 'lucide-react'
 
 const services = [
   {
@@ -13,9 +13,21 @@ const services = [
   },
   {
     icon: Smartphone,
-    title: 'Mobile Development',
+    title: 'Mobile App Development',
     description: 'Creating native and cross-platform mobile applications with seamless user experiences',
-    features: ['React Native', 'iOS & Android', 'Push Notifications', 'Offline Support'],
+    features: ['React Native', 'Flutter', 'Push Notifications', 'Offline Support'],
+  },
+  {
+    icon: Bot,
+    title: 'Automation & Chatbots',
+    description: 'Building AI chatbots and automated workflows that save hours of manual work and run your business 24/7',
+    features: ['AI Chatbots', 'n8n Workflows', 'WhatsApp Automation', 'CRM & API Integration'],
+  },
+  {
+    icon: Gamepad2,
+    title: 'Game Development (C++)',
+    description: 'Creating custom game engines and games in C++ with smooth rendering, physics and gameplay systems',
+    features: ['C++ Game Engines', '2D & 3D Games', 'Physics & Rendering', 'SDL / OpenGL / Raylib'],
   },
   {
     icon: Palette,
