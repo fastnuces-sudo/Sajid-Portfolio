@@ -24,9 +24,54 @@ const projects = [
     live: '#',
     github: '#',
   },
+  {
+    title: 'PixelForge 2D Game Engine',
+    description: 'A custom 2D game engine built in C++ with sprite rendering, physics, particle effects and a tile-based level editor',
+    image: 'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=800',
+    tech: ['C++', 'SDL2', 'OpenGL'],
+    category: 'Game Engine',
+    live: '#',
+    github: '#',
+  },
+  {
+    title: 'Neon Arena Game',
+    description: 'A fast-paced arena game built on a custom C++ engine with smooth physics, particle effects and gamepad support',
+    image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800',
+    tech: ['C++', 'Raylib', 'Box2D'],
+    category: 'Game Engine',
+    live: '#',
+    github: '#',
+  },
+  {
+    title: 'AI Support Chatbot',
+    description: 'An AI-powered customer support chatbot that answers FAQs, collects leads and hands off to humans — automated 24/7 on web & WhatsApp',
+    image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800',
+    tech: ['Python', 'Chatbots', 'OpenAI API', 'n8n'],
+    category: 'Automation',
+    live: '#',
+    github: '#',
+  },
+  {
+    title: 'Smart Workflow Automation Suite',
+    description: 'Automated workflows connecting forms, CRM, email and spreadsheets — lead capture, notifications and data sync without manual work',
+    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800',
+    tech: ['n8n', 'REST APIs', 'Webhooks', 'Google Sheets'],
+    category: 'Automation',
+    live: '#',
+    github: '#',
+  },
+  {
+    title: 'TaskFlow Mobile App',
+    description: 'A cross-platform productivity app for tasks, reminders and team collaboration with offline sync and push notifications',
+    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800',
+    tech: ['React Native', 'Flutter', 'Firebase'],
+    category: 'Mobile App',
+    live: '#',
+    github: '#',
+  },
 ]
 
-const categories = ['All', 'Web App', 'E-Commerce']
+const categories = ['All', 'Web App', 'E-Commerce', 'Mobile App', 'Game Engine', 'Automation']
 
 export function Projects() {
   const [ref, inView] = useInView({

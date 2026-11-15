@@ -8,8 +8,12 @@ const skills = [
   { name: 'HTML/CSS', level: 90, color: '#E34F26' },
   { name: 'JavaScript', level: 85, color: '#F7DF1E' },
   { name: 'React', level: 75, color: '#61DAFB' },
+  { name: 'React Native', level: 70, color: '#38BDF8' },
   { name: 'Node.js', level: 70, color: '#339933' },
   { name: 'Python', level: 80, color: '#3776AB' },
+  { name: 'C++', level: 75, color: '#00599C' },
+  { name: 'Chatbots', level: 75, color: '#A855F7' },
+  { name: 'n8n', level: 70, color: '#EA4B71' },
   { name: 'Tailwind CSS', level: 85, color: '#06B6D4' },
   { name: 'Git', level: 75, color: '#F05032' },
   { name: 'SQL', level: 70, color: '#4479A1' },
@@ -144,18 +148,18 @@ export function Skills() {
         >
           {[
             {
-              title: 'Frontend',
-              skills: ['HTML/CSS', 'JavaScript', 'React', 'Tailwind CSS'],
+              title: 'Frontend & Mobile',
+              skills: ['HTML/CSS', 'JavaScript', 'React', 'React Native', 'Flutter', 'Tailwind CSS'],
               icon: '🎨',
             },
             {
-              title: 'Backend',
-              skills: ['Node.js', 'Python', 'SQL', 'REST APIs'],
+              title: 'Backend & Automation',
+              skills: ['Node.js', 'Python', 'REST APIs', 'SQL', 'Chatbots', 'n8n Workflows'],
               icon: '⚙️',
             },
             {
-              title: 'Tools',
-              skills: ['Git', 'VS Code', 'Postman'],
+              title: 'Systems & Tools',
+              skills: ['C++', 'TypeScript', 'Next.js', 'Git', 'VS Code', 'Postman'],
               icon: '✨',
             },
           ].map((category, index) => (

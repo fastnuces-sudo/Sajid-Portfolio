@@ -62,7 +62,7 @@ export function Footer() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
               >
-                Computer Science student at FAST NUCES, passionate about solving problems and creating innovative web solutions.
+                Computer Science student at FAST NUCES, passionate about solving problems and creating innovative software — web apps, mobile apps, automation &amp; games.
               </motion.p>
               
               {/* Social Links */}

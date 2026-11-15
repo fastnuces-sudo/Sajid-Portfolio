@@ -18,9 +18,9 @@ const space = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  title: 'Portfolio | Creative Developer',
-  description: 'Award-winning creative developer building premium digital experiences',
-  keywords: ['developer', 'portfolio', 'creative', 'web development', 'UI/UX'],
+  title: 'Portfolio | Software Developer',
+  description: 'Creative software developer building web apps, mobile apps, AI chatbots, automation workflows and C++ games',
+  keywords: ['developer', 'portfolio', 'creative', 'web development', 'mobile apps', 'automation', 'chatbots', 'n8n', 'C++', 'game development', 'React Native', 'Flutter', 'UI/UX'],
 }
 
 export default function RootLayout({

@@ -97,7 +97,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            Creative Developer
+            Creative Software Developer
           </motion.p>
 
           <motion.h1
@@ -128,7 +128,7 @@ export function Hero() {
             transition={{ delay: 1.2 }}
           >
             Computer Science student at FAST NUCES, passionate about solving
-            problems and creating innovative web solutions
+            problems and creating innovative software — web apps, mobile apps, automation &amp; games
           </motion.p>
 
           <motion.div
